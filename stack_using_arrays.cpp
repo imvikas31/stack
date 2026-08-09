@@ -23,7 +23,7 @@ class ArrayStack{
         arr[topIndex] = data;
         cout<<data<<" added to the stack\n";
     }
-     int pop(){
+    int pop(){
         if(topIndex == -1){
             cout<<"Stack Empty\n";
             return -1;
@@ -34,6 +34,10 @@ class ArrayStack{
         return topElement;
     }
 
+    int top(){
+        return arr[topIndex];
+    }
+
     bool isEmpty(){
         if(topIndex == -1){
             return true;
@@ -42,7 +46,15 @@ class ArrayStack{
         return false;
     }
 
+   void display() {
+    cout << "Stack elements are: ";
 
+    for(int i = topIndex; i >= 0; i--) {
+        cout << arr[i] << " ";
+    }
+
+    cout << endl;
+}
     ~ArrayStack(){
         delete[] arr;
     }
@@ -53,33 +65,52 @@ int main(){
 
     ArrayStack s1(5);
 
-    if(s1.isEmpty() == 1){
+if(s1.isEmpty() == 1){
         cout<<"Stack is Empty"<<endl;
     }else{
         cout<<"Stack is Empty"<<endl;
     }
 
 
-    cout<<endl;
-
-
-    s1.push(10);
-    cout<<endl;
-
+cout<<endl;
+    s1.display();
 
     cout<<"Element removed: "<<s1.pop()<<endl;
 
-  
+    s1.display();
     cout<<endl;
 
+    s1.push(20);
+    s1.display();
+    cout<<endl;
+
+    s1.push(30);
+    cout<<endl;
+    s1.display();
+    cout<<endl;
+
+    s1.push(40);
+    cout<<endl;
+    s1.display();
+   
+    cout<<"Element removed: "<<s1.pop()<<endl;
+    cout<<"Top Element : "<<s1.top()<<endl;
+
+    cout<<endl;
+
+    s1.push(50);
+    cout<<endl;
+    s1.display();
+    cout<<endl;
 
      if(s1.isEmpty() == 1){
         cout<<"Stack is Empty"<<endl;
     }else{
         cout<<"Stack is Not Empty"<<endl;
     }
-    
 
+
+    cout<<"Top Element : "<<s1.top()<<endl;
     return 0;
 
 }

@@ -34,6 +34,14 @@ class ArrayStack{
         return topElement;
     }
 
+    bool isEmpty(){
+        if(topIndex == -1){
+            return true;
+        }
+
+        return false;
+    }
+
 
     ~ArrayStack(){
         delete[] arr;
@@ -45,6 +53,15 @@ int main(){
 
     ArrayStack s1(5);
 
+    if(s1.isEmpty() == 1){
+        cout<<"Stack is Empty"<<endl;
+    }else{
+        cout<<"Stack is Empty"<<endl;
+    }
+
+
+    cout<<endl;
+
 
     s1.push(10);
     cout<<endl;
@@ -54,6 +71,13 @@ int main(){
 
   
     cout<<endl;
+
+
+     if(s1.isEmpty() == 1){
+        cout<<"Stack is Empty"<<endl;
+    }else{
+        cout<<"Stack is Not Empty"<<endl;
+    }
     
 
     return 0;

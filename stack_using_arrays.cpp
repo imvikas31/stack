@@ -23,6 +23,16 @@ class ArrayStack{
         arr[topIndex] = data;
         cout<<data<<" added to the stack\n";
     }
+     int pop(){
+        if(topIndex == -1){
+            cout<<"Stack Empty\n";
+            return -1;
+        }
+
+        int topElement = arr[topIndex];
+        topIndex--;
+        return topElement;
+    }
 
 
     ~ArrayStack(){
@@ -35,10 +45,15 @@ int main(){
 
     ArrayStack s1(5);
 
-    
-
 
     s1.push(10);
+    cout<<endl;
+
+
+    cout<<"Element removed: "<<s1.pop()<<endl;
+
+  
+    cout<<endl;
     
 
     return 0;
